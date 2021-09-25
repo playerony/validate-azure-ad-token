@@ -1,0 +1,27 @@
+name: commitlint
+
+on: push
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: yarn install
+        run: yarn install
+
+      - name: yarn commitlint for last commit
+        run: git log -1 --pretty=format:"%s" | npx commitlint
+
+      - name: yarn commitlint for main branch
+        run: yarn commitlint

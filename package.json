@@ -1,0 +1,69 @@
+{
+  "name": "validate-azure-ad-token",
+  "version": "1.0.0",
+  "description": "Simple function to verify token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and wanna verify Microsoft tokens in the node server.",
+  "license": "MIT",
+  "author": "Paweł Wojtasiński <pawel.wojtasinski.1995@gmail.com>",
+  "repository": "git@github.com:playerony/validate-azure-ad-token.git",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx rimraf dist && npx rimraf tsconfig.tsbuildinfo && tsc",
+    "build:docs": "bash ./scripts/build-docs.sh",
+    "check": "yarn lint && yarn typecheck && yarn format:check && yarn test && yarn commitlint && yarn build",
+    "commitlint": "commitlint -- --from=main",
+    "dev": "yarn build --watch --preserveWatchOutput",
+    "docs:api-documenter": "yarn api-documenter markdown -i temp -o docs",
+    "docs:api-extractor": "yarn api-extractor run",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "gcb": "bash ./scripts/git-create-branch.sh",
+    "gcmwp": "bash ./scripts/git-checkout-main-with-pull.sh",
+    "gpc": "bash ./scripts/git-push-changes.sh",
+    "lint": "eslint src --ext js,ts",
+    "lint:fix": "yarn lint --fix",
+    "open:coverage": "open ./coverage/lcov-report/index.html",
+    "prepare": "husky install",
+    "reinstall-node-modules": "bash ./scripts/reinstall-node-modules.sh",
+    "remove-node-modules": "bash ./scripts/remove-node-modules.sh",
+    "test": "yarn build && jest",
+    "test:ci": "yarn test --ci --coverage --forceExit",
+    "test:coverage": "yarn test --collectCoverage",
+    "test:update-snapshot": "yarn test --updateSnapshot",
+    "test:watch": "yarn test --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.9",
+    "@babel/preset-typescript": "^7.14.5",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@microsoft/api-documenter": "^7.13.34",
+    "@microsoft/api-extractor": "^7.18.4",
+    "@types/jest": "^26.0.24",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.1.1",
+    "prettier": "^2.3.2",
+    "prettier-package-json": "^2.6.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test",
+      "pre-commit": "lint-staged && npm test"
+    }
+  },
+  "volta": {
+    "node": "14.17.4",
+    "yarn": "1.22.11"
+  }
+}
