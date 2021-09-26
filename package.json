@@ -33,6 +33,11 @@
     "typecheck": "tsc --noEmit"
   },
   "types": "dist/index.d.ts",
+  "dependencies": {
+    "@types/jsonwebtoken": "^8.5.5",
+    "axios": "^0.21.4",
+    "jsonwebtoken": "^8.5.1"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.14.9",
     "@babel/preset-typescript": "^7.14.5",

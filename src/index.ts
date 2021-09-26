@@ -1,42 +1,26 @@
+import { decodeAccessToken } from './utils/decode-access-token';
+import { validateTokenHeader } from './utils/validate-token-header';
+
 /**
- * @packageDocumentation A small library for common math functions
+ * @packageDocumentation Simple function to validate access token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and you wanna verify Microsoft tokens in the API.
  */
 
 /**
- * Calculate the average of three numbers
+ * Validate azure active directory access token
  *
- * @param a - first number
- * @param b - second number
- * @param c - third number
+ * @param accessToken - valid access token received from azure
  *
  * @public
  */
-export function avg(a: number, b: number, c: number): number {
-  return sum3(a, b, c) / 3;
-}
+export async function validate(accessToken: string): Promise<void> {
+  const decodedAccessToken = decodeAccessToken(accessToken);
+  if (!decodedAccessToken) {
+    throw new Error('The access token could not be decoded');
+  }
 
-/**
- * Calculate the sum of three numbers
- *
- * @param a - first number
- * @param b - second number
- * @param c - third number
- *
- * @beta
- */
-export function sum3(a: number, b: number, c: number): number {
-  return sum2(a, sum2(b, c));
-}
-
-/**
- * Calculate the sum of two numbers
- *
- * @param a - first number
- * @param b - second number
- *
- * @internal
- */
-export function sum2(a: number, b: number): number {
-  const sum = a + b;
-  return sum;
+  try {
+    await validateTokenHeader(decodedAccessToken.header, '123', '123');
+  } catch (error: unknown) {
+    console.log(error);
+  }
 }
