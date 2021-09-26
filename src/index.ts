@@ -1,6 +1,7 @@
 import { decodeAccessToken } from './utils/decode-access-token';
 import { validateTokenHeader } from './utils/validate-token-header';
 import { validateTokenClaims } from './utils/validate-token-claims';
+import { validateTokenWithGraphApi } from './utils/validate-token-with-graph-api';
 
 import { IValidationOptions } from './index.types';
 
@@ -33,6 +34,8 @@ export async function validate(
       tenantId,
       applicationId,
     });
+
+    await validateTokenWithGraphApi(accessToken, decodedAccessToken.payload);
   } catch (error: unknown) {
     console.log(error);
   }
