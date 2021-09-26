@@ -1,7 +1,7 @@
 {
   "name": "validate-azure-ad-token",
   "version": "1.0.0",
-  "description": "Simple function to verify token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and wanna verify Microsoft tokens in the node server.",
+  "description": "Simple function to validate access token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and you wanna verify Microsoft tokens in the API.",
   "license": "MIT",
   "author": "Paweł Wojtasiński <pawel.wojtasinski.1995@gmail.com>",
   "repository": "git@github.com:playerony/validate-azure-ad-token.git",
