@@ -20,7 +20,7 @@ const callGraphApi = async (
   }
 };
 
-export const verifyTokenWithGraphApi = async (
+export const validateTokenWithGraphApi = async (
   accessToken: string,
   payload: JwtPayload,
 ): Promise<void> => {
