@@ -1,7 +1,7 @@
 {
   "name": "validate-azure-ad-token",
   "version": "1.0.0",
-  "description": "Simple function to validate access token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and you wanna verify Microsoft tokens in the API.",
+  "description": "Function to validate access token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and you wanna verify Microsoft tokens in the API.",
   "license": "MIT",
   "author": "Paweł Wojtasiński <pawel.wojtasinski.1995@gmail.com>",
   "repository": "git@github.com:playerony/validate-azure-ad-token.git",
@@ -9,7 +9,7 @@
   "scripts": {
     "build": "npx rimraf dist && npx rimraf tsconfig.tsbuildinfo && tsc",
     "build:docs": "bash ./scripts/build-docs.sh",
-    "check": "yarn lint && yarn typecheck && yarn format:check && yarn test && yarn commitlint && yarn build",
+    "check": "yarn lint && yarn typecheck && yarn format:check && yarn commitlint && yarn build",
     "commitlint": "commitlint -- --from=main",
     "dev": "yarn build --watch --preserveWatchOutput",
     "docs:api-documenter": "yarn api-documenter markdown -i temp -o docs",
@@ -25,16 +25,10 @@
     "prepare": "husky install",
     "reinstall-node-modules": "bash ./scripts/reinstall-node-modules.sh",
     "remove-node-modules": "bash ./scripts/remove-node-modules.sh",
-    "test": "yarn build && jest",
-    "test:ci": "yarn test --ci --coverage --forceExit",
-    "test:coverage": "yarn test --collectCoverage",
-    "test:update-snapshot": "yarn test --updateSnapshot",
-    "test:watch": "yarn test --watch",
     "typecheck": "tsc --noEmit"
   },
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@types/jsonwebtoken": "^8.5.5",
     "axios": "^0.21.4",
     "jsonwebtoken": "^8.5.1"
   },
@@ -45,13 +39,12 @@
     "@commitlint/config-conventional": "^13.1.0",
     "@microsoft/api-documenter": "^7.13.34",
     "@microsoft/api-extractor": "^7.18.4",
-    "@types/jest": "^26.0.24",
+    "@types/jsonwebtoken": "^8.5.5",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "eslint": "^7.32.0",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^7.0.1",
-    "jest": "^27.0.6",
     "lint-staged": "^11.1.1",
     "prettier": "^2.3.2",
     "prettier-package-json": "^2.6.0",
@@ -63,8 +56,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm test",
-      "pre-commit": "lint-staged && npm test"
+      "pre-commit": "lint-staged"
     }
   },
   "volta": {

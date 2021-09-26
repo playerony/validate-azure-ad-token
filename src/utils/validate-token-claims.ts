@@ -1,6 +1,6 @@
 import { JwtPayload } from 'jsonwebtoken';
 
-import { IValidationOptions } from '../index.types';
+import { IValidationOptions } from '..';
 
 export function validateTokenClaims(
   tokenPayload: JwtPayload,

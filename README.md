@@ -1,6 +1,6 @@
 # Validate azure active directory token
 
-Simple function to validate access token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and you wanna verify Microsoft tokens in the API.
+Function to validate access token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and you wanna verify Microsoft tokens in the API.
 
 ![Lint](https://github.com/playerony/validate-azure-ad-token/workflows/lint/badge.svg)
 ![Test](https://github.com/playerony/validate-azure-ad-token/workflows/test/badge.svg)

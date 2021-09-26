@@ -6,6 +6,6 @@
 
 ## Packages
 
-| Package                                                 | Description                               |
-| ------------------------------------------------------- | ----------------------------------------- |
-| [validate-azure-ad-token](./validate-azure-ad-token.md) | A small library for common math functions |
+| Package                                                 | Description                                                                                                                                                                                             |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [validate-azure-ad-token](./validate-azure-ad-token.md) | Function to validate access token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and you wanna verify Microsoft tokens in the API. |

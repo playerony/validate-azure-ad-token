@@ -4,11 +4,16 @@
 
 ## validate-azure-ad-token package
 
-A small library for common math functions
+Function to validate access token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and you wanna verify Microsoft tokens in the API.
 
 ## Functions
 
-| Function                                           | Description                                             |
-| -------------------------------------------------- | ------------------------------------------------------- |
-| [avg(a, b, c)](./validate-azure-ad-token.avg.md)   | Calculate the average of three numbers                  |
-| [sum3(a, b, c)](./validate-azure-ad-token.sum3.md) | <b><i>(BETA)</i></b> Calculate the sum of three numbers |
+| Function                                                                                                      | Description                                  |
+| ------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| [validate(accessToken, { scopes, audience, tenantId, applicationId })](./validate-azure-ad-token.validate.md) | Validate azure active directory access token |
+
+## Interfaces
+
+| Interface                                                             | Description                                                                 |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [IValidationOptions](./validate-azure-ad-token.ivalidationoptions.md) | The interface represents required fields to process access token validation |
