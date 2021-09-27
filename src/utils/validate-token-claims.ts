@@ -57,7 +57,7 @@ export function validateTokenClaims(
   }
 
   const scopesAsArray = tokenPayload.scp.split(' ');
-  const hasValidScopes = scopes.some((_scope) => scopesAsArray.includes(_scope));
+  const hasValidScopes = scopes.every((_scope) => scopesAsArray.includes(_scope));
   if (!hasValidScopes) {
     throw new Error(`The token's payload contains different scopes`);
   }
