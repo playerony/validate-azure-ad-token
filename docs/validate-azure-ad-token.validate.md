@@ -9,10 +9,10 @@ Validate azure active directory access token
 <b>Signature:</b>
 
 ```typescript
-export declare function validate(
+export default function validate(
   accessToken: string,
   { scopes, audience, tenantId, applicationId }: IValidationOptions,
-): Promise<void>;
+): Promise<Jwt>;
 ```
 
 ## Parameters
@@ -24,4 +24,4 @@ export declare function validate(
 
 <b>Returns:</b>
 
-Promise&lt;void&gt;
+Promise&lt;Jwt&gt;
