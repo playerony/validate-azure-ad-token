@@ -4,8 +4,6 @@
 
 ## validate-azure-ad-token package
 
-Function to validate access token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and you wanna verify Microsoft tokens in the API.
-
 ## Functions
 
 | Function                                                                                                      | Description                                  |

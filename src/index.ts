@@ -1,3 +1,5 @@
+import { Jwt } from 'jsonwebtoken';
+
 import { decodeAccessToken } from './utils/decode-access-token';
 import { validateTokenHeader } from './utils/validate-token-header';
 import { validateTokenClaims } from './utils/validate-token-claims';
@@ -38,13 +40,30 @@ export interface IValidationOptions {
  * Validate azure active directory access token
  *
  * @param accessToken - valid access token received from azure
+ * @param validationOptions - the interface represents required fields to process access token validation
  *
  * @public
  */
-export async function validate(
+export default async function validate(
   accessToken: string,
   { scopes, audience, tenantId, applicationId }: IValidationOptions,
-): Promise<void> {
+): Promise<Jwt> {
+  if (Array.isArray(scopes) && scopes.length === 0) {
+    throw new Error('"scopes" array cannot be empty');
+  }
+
+  if (typeof audience !== 'string' || audience.length === 0) {
+    throw new Error('"audience" value was not provided');
+  }
+
+  if (typeof tenantId !== 'string' || tenantId.length === 0) {
+    throw new Error('"tenantId" value was not provided');
+  }
+
+  if (typeof applicationId !== 'string' || applicationId.length === 0) {
+    throw new Error('"applicationId" value was not provided');
+  }
+
   const decodedAccessToken = decodeAccessToken(accessToken);
   if (!decodedAccessToken) {
     throw new Error('The access token could not be decoded');
@@ -60,4 +79,6 @@ export async function validate(
   });
 
   await validateTokenWithGraphApi(accessToken, decodedAccessToken.payload);
+
+  return decodedAccessToken;
 }
