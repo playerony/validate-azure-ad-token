@@ -37,7 +37,7 @@ const validate = require('validate-azure-ad-token').default;
 
 try {
 	const decodedToken = await validate('YOUR_MICROSOFT_ACCESS_TOKEN', {
-		tenantId: 'YOUR_TENANT_ID'
+		tenantId: 'YOUR_TENANT_ID',
 		audience: 'YOUR_AUDIENCE_ID',
 		applicationId: 'YOUR_APPLICATION_ID',
 		scopes: 'YOUR_SCOPES' // for example ["User.Read"]
