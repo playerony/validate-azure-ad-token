@@ -1,4 +1,4 @@
-# validate-azure-ad-token
+# Validate Azure AD Token
 
 [![npm](https://img.shields.io/npm/v/validate-azure-ad-token.svg)](https://www.npmjs.com/package/validate-azure-ad-token)
 ![types](https://img.shields.io/badge/types-typescript%20%7C%20flow-blueviolet)
@@ -16,8 +16,8 @@ For more information about the required props to validate your token and the lib
 # Installation
 
 ```js
-	yarn add validate-azure-ad-token
-	npm install validate-azure-ad-token
+  yarn add validate-azure-ad-token
+  npm install validate-azure-ad-token
 ```
 
 # Validation Steps
@@ -36,16 +36,16 @@ For more information about the required props to validate your token and the lib
 const validate = require('validate-azure-ad-token').default;
 
 try {
-	const decodedToken = await validate('YOUR_MICROSOFT_ACCESS_TOKEN', {
+  const decodedToken = await validate('YOUR_MICROSOFT_ACCESS_TOKEN', {
     tenantId: 'YOUR_TENANT_ID',
     audience: 'YOUR_AUDIENCE_ID',
     applicationId: 'YOUR_APPLICATION_ID',
     scopes: 'YOUR_SCOPES' // for example ["User.Read"]
   });
 
-	// DO WHATEVER YOU WANT WITH YOUR DECODED TOKEN
+  // DO WHATEVER YOU WANT WITH YOUR DECODED TOKEN
 } catch (error: unknown) {
-	// ALL ERRORS GONNA SHOW HERE AS A STRING VALUE
+  // ALL ERRORS GONNA SHOW HERE AS A STRING VALUE
 }
 
 ```
