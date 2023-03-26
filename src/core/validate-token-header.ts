@@ -38,6 +38,7 @@ export async function validateTokenHeader(
   );
 
   const isValidPublicKey = data.keys.some((_key) => _key.kid === tokenHeader.kid);
+
   if (!isValidPublicKey) {
     throw new Error('The public key retrieved from the token header is invalid');
   }
