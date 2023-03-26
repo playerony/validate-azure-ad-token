@@ -1,4 +1,4 @@
-# validate-azure-ad-token
+# Validate Azure AD Token
 
 [![npm](https://img.shields.io/npm/v/validate-azure-ad-token.svg)](https://www.npmjs.com/package/validate-azure-ad-token)
 ![types](https://img.shields.io/badge/types-typescript%20%7C%20flow-blueviolet)
