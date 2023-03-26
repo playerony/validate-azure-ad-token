@@ -7,41 +7,41 @@
 [![issues](https://img.shields.io/github/issues/playerony/validate-azure-ad-token.svg)](https://www.npmjs.com/package/validate-azure-ad-token)
 [![license](https://img.shields.io/github/license/playerony/validate-azure-ad-token)](https://www.npmjs.com/package/validate-azure-ad-token)
 
-Function to validate access token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and you wanna verify Microsoft tokens in the API.
+This is a function that can be used to validate an access token received from Azure Active Directory. It is particularly useful when you're using a MSAL library to authenticate users on the frontend and you want to verify Microsoft tokens in the API.
 
-# documentation
+# Documentation
 
-If you want to get more information about required props to validate your token and the library itself, just take a look at markdown documentation: **[API Documentation](https://playerony.github.io/validate-azure-ad-token)**
+For more information about the required props to validate your token and the library itself, please refer to the **[API Documentation](https://playerony.github.io/validate-azure-ad-token)**
 
-# installation
+# Installation
 
 ```js
 	yarn add validate-azure-ad-token
 	npm install validate-azure-ad-token
 ```
 
-# validation steps
+# Validation Steps
 
-1. Verify if all required props are passed in,
-2. Decode token with **[jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)** library,
-3. Send request to `https://login.microsoftonline.com/{tenantId}/discovery/keys?appid={applicationId}` to receive all public keys unique only for your `applicationId` and `tenantId` props. THIS ACTION IS CACHED - AFTER ONE SUCCESSFUL ATTEMTP.
+1. Verify if all required props are passed in.
+2. Decode the token using the **[jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)** library.
+3. Send a request to `https://login.microsoftonline.com/{tenantId}/discovery/keys?appid={applicationId}` to receive all public keys unique to your `applicationId` and `tenantId`. This action is cached after one successful attempt.
 4. Verify all required access token claims: `aud`, `tid`,`iss`,`scp`, `appid`.
-5. The above steps are a guarantee that the token belongs to us and can be successfully sent to Microsoft's graph API. To `https://graph.microsoft.com/v1.0/me`.
-6. After a successful attempt "id" field received from graph API is compared with this one from the access token payload.
-7. Your token is valid!
+5. The above steps guarantee that the token belongs to you and can be successfully sent to Microsoft's graph API.
+6. After a successful attempt, the `id` field received from the graph API is compared with the one from the access token payload.
+7. If the comparison succeeds, the token is valid.
 
-# example
+# Example
 
 ```js
 const validate = require('validate-azure-ad-token').default;
 
 try {
 	const decodedToken = await validate('YOUR_MICROSOFT_ACCESS_TOKEN', {
-		tenantId: 'YOUR_TENANT_ID',
-		audience: 'YOUR_AUDIENCE_ID',
-		applicationId: 'YOUR_APPLICATION_ID',
-		scopes: 'YOUR_SCOPES' // for example ["User.Read"]
-	})
+    tenantId: 'YOUR_TENANT_ID',
+    audience: 'YOUR_AUDIENCE_ID',
+    applicationId: 'YOUR_APPLICATION_ID',
+    scopes: 'YOUR_SCOPES' // for example ["User.Read"]
+  });
 
 	// DO WHATEVER YOU WANT WITH YOUR DECODED TOKEN
 } catch (error: unknown) {
@@ -50,10 +50,10 @@ try {
 
 ```
 
-# usage
+# Usage
 
-If you are using a **[@azure/msal-react](https://www.npmjs.com/package/@azure/msal-react)** or **[@azure/msal-browser](https://www.npmjs.com/package/@azure/msal-browser)** on the frontend site and you just want to verify your Microsoft access token on your node server.
+If you are using a **[@azure/msal-react](https://www.npmjs.com/package/@azure/msal-react)** or **[@azure/msal-browser](https://www.npmjs.com/package/@azure/msal-browser)** on the frontend site and you want to verify your Microsoft access token on your node server.
 
-# license
+# License
 
-MIT
+This project is licensed under the MIT License - see the LICENSE file for details.
