@@ -10,7 +10,7 @@ module.exports = {
   plugins: ['folders', 'sort-destructure-keys', 'unused-imports'],
   overrides: [
     {
-      files: ['*.js', '*.ts', '*.tsx'],
+      files: ['*.js', '*.ts'],
       rules: {
         'no-console': 'off',
         'linebreak-style': 0,
