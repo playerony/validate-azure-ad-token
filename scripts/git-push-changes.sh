@@ -1,5 +1,14 @@
 commitMessage="$1"
 
+currentBranch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+developBranchName=$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')
+
+if [ $currentBranch == $developBranchName ]; then
+  echo 'Error: cannot push changes to '$developBranchName'.'
+
+  exit 1
+fi
+
 if [ -z "$commitMessage" ]; then
   echo 'Error: commit message was not specified.'
 
@@ -11,8 +20,6 @@ echo "Info: Staged all files."
 
 git commit -m "$commitMessage"
 echo "Info: Added the commit with message: '$commitMessage'."
-
-currentBranch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 
 git push origin "$currentBranch"
 echo "Info: Push changes to '$currentBranch' branch."

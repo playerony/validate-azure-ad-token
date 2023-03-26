@@ -1,2 +1,2 @@
-yarn run remove-node-modules
+rm -rf node_modules
 yarn install

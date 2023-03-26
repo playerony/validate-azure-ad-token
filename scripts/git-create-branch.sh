@@ -6,7 +6,7 @@ if [ -z "$branchName" ]; then
   exit 1
 fi
 
-exists=`git show-ref refs/heads/$branchName`
+exists=$(git show-ref refs/heads/$branchName)
 if [ -n "$exists" ]; then
   echo "Error: '$branchName' branch already exists."
 
