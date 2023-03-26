@@ -17,14 +17,15 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "gcb": "bash ./scripts/git-create-branch.sh",
-    "gcmwp": "bash ./scripts/git-checkout-main-with-pull.sh",
+    "gcdwp": "bash ./scripts/git-checkout-develop-with-pull.sh",
     "gpc": "bash ./scripts/git-push-changes.sh",
+    "grlc": "bash ./scripts/git-reset-local-changes.sh",
     "lint": "eslint src --ext js,ts",
     "lint:fix": "yarn lint --fix",
     "open:coverage": "open ./coverage/lcov-report/index.html",
     "prepare": "husky install",
     "reinstall-node-modules": "bash ./scripts/reinstall-node-modules.sh",
-    "remove-node-modules": "bash ./scripts/remove-node-modules.sh",
+    "rlb": "bash ./scripts/remove-local-branches.sh",
     "typecheck": "tsc --noEmit"
   },
   "types": "dist/index.d.ts",
@@ -52,6 +53,8 @@
     "typescript": "^4.3.5"
   },
   "keywords": [
+    "Paweł",
+    "Wojtasiński",
     "axios",
     "azure",
     "azure-ad-jwt",
@@ -63,6 +66,7 @@
     "msal-browser",
     "msal-library",
     "msal-react",
+    "playerony",
     "token",
     "validation"
   ],
