@@ -1,6 +1,6 @@
 {
   "name": "validate-azure-ad-token",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Function to validate access token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and you wanna verify Microsoft tokens in the API.",
   "license": "MIT",
   "author": "Paweł Wojtasiński <pawel.wojtasinski.1995@gmail.com>",
