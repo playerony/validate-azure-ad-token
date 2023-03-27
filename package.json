@@ -9,7 +9,7 @@
   "scripts": {
     "build": "npx rimraf dist && npx rimraf tsconfig.tsbuildinfo && tsc",
     "build:docs": "bash ./scripts/build-docs.sh",
-    "check": "yarn lint && yarn typecheck && yarn format:check && yarn commitlint && yarn build",
+    "check:all": "concurrently \"yarn lint\" \"yarn typecheck\" \"yarn format:check\" \"yarn build\"",
     "commitlint": "commitlint -- --from=main",
     "dev": "yarn build --watch --preserveWatchOutput",
     "docs:api-documenter": "yarn api-documenter markdown -i temp -o docs",
