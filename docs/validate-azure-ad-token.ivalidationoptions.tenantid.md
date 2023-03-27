@@ -6,7 +6,7 @@
 
 Your Microsoft 365 tenant ID is a globally unique identifier (GUID) that is different than your organization name or domain.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 tenantId: string;

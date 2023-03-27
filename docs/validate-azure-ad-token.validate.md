@@ -6,12 +6,12 @@
 
 Validate azure active directory access token
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export default function validate(
   accessToken: string,
-  { scopes, audience, tenantId, applicationId }: IValidationOptions,
+  { applicationId, audience, scopes, tenantId }: IValidationOptions,
 ): Promise<Jwt>;
 ```
 
@@ -20,8 +20,8 @@ export default function validate(
 | Parameter                                     | Type                                                                  | Description                            |
 | --------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------- |
 | accessToken                                   | string                                                                | valid access token received from azure |
-| { scopes, audience, tenantId, applicationId } | [IValidationOptions](./validate-azure-ad-token.ivalidationoptions.md) |                                        |
+| { applicationId, audience, scopes, tenantId } | [IValidationOptions](./validate-azure-ad-token.ivalidationoptions.md) |                                        |
 
-<b>Returns:</b>
+**Returns:**
 
 Promise&lt;Jwt&gt;
