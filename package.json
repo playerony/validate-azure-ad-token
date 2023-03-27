@@ -87,6 +87,7 @@
       "pre-commit": "lint-staged"
     }
   },
+  "packageManager": "yarn@3.5.0",
   "volta": {
     "node": "14.17.4",
     "yarn": "1.22.11"
