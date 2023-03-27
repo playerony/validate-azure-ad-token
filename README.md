@@ -44,7 +44,7 @@ try {
   });
 
   // DO WHATEVER YOU WANT WITH YOUR DECODED TOKEN
-} catch (error: unknown) {
+} catch (error) {
   // ALL ERRORS GONNA SHOW HERE AS A STRING VALUE
 }
 
