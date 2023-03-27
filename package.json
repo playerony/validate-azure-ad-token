@@ -6,6 +6,9 @@
   "author": "Paweł Wojtasiński <pawel.wojtasinski.1995@gmail.com>",
   "repository": "git@github.com:playerony/validate-azure-ad-token.git",
   "main": "dist/index.js",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "build": "npx rimraf dist && npx rimraf tsconfig.tsbuildinfo && tsc",
     "build:docs": "bash ./scripts/build-docs.sh",
