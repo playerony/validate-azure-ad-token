@@ -1,9 +1,15 @@
+*.md
 *.json
+*.lock
 *.ts.snap
+*.tsbuildinfo
 
 dist
+docs
+scripts
 node_modules
 
+LICENSE
 .eslintrc.js
 jest.config.js
 rollup.config.js

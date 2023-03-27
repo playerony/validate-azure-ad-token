@@ -6,7 +6,7 @@
 
 Identifies the intended recipient of the token - its audience. In v2.0 tokens, this is always the client ID of the API, while in v1.0 tokens it can be the client ID or the resource URI used in the request, depending on how the client requested the token.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 audience: string;

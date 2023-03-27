@@ -8,7 +8,7 @@
 
 | Function                                                                                                      | Description                                  |
 | ------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| [validate(accessToken, { scopes, audience, tenantId, applicationId })](./validate-azure-ad-token.validate.md) | Validate azure active directory access token |
+| [validate(accessToken, { applicationId, audience, scopes, tenantId })](./validate-azure-ad-token.validate.md) | Validate azure active directory access token |
 
 ## Interfaces
 

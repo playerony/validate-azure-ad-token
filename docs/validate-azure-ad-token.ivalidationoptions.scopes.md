@@ -6,7 +6,7 @@
 
 The set of scopes exposed by your application for which the client application has requested (and received) consent.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 scopes: string[];
