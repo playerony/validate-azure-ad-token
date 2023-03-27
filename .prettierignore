@@ -1,5 +1,6 @@
 dist
 temp
+docs
 *.json
 coverage
 .DS_Store
