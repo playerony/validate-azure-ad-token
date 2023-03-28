@@ -40,14 +40,13 @@ try {
     tenantId: 'YOUR_TENANT_ID',
     audience: 'YOUR_AUDIENCE_ID',
     applicationId: 'YOUR_APPLICATION_ID',
-    scopes: 'YOUR_SCOPES' // for example ["User.Read"]
+    scopes: 'YOUR_SCOPES', // for example ["User.Read"]
   });
 
   // DO WHATEVER YOU WANT WITH YOUR DECODED TOKEN
 } catch (error) {
   // ALL ERRORS GONNA SHOW HERE AS A STRING VALUE
 }
-
 ```
 
 # Usage
