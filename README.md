@@ -25,10 +25,8 @@ For more information about the required props to validate your token and the lib
 1. Verify if all required props are passed in.
 2. Decode the token using the **[jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)** library.
 3. Send a request to `https://login.microsoftonline.com/{tenantId}/discovery/keys?appid={applicationId}` to receive all public keys unique to your `applicationId` and `tenantId`. This action is cached after one successful attempt.
-4. Verify all required access token claims: `aud`, `tid`,`iss`,`scp`, `appid`.
-5. The above steps guarantee that the token belongs to you and can be successfully sent to Microsoft's graph API.
-6. After a successful attempt, the `id` field received from the graph API is compared with the one from the access token payload.
-7. If the comparison succeeds, the token is valid.
+4. Verify all required access token claims: `aud`, `tid`,`iss`,`scp`, `appid`, `exp`.
+6. If the comparison succeeds, the token is valid.
 
 # Example
 

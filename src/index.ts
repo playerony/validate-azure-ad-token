@@ -4,7 +4,6 @@ import { isString } from './core/is-string';
 import { decodeAccessToken } from './core/decode-access-token';
 import { validateTokenHeader } from './core/validate-token-header';
 import { validateTokenClaims } from './core/validate-token-claims';
-import { validateTokenWithGraphApi } from './core/validate-token-with-graph-api';
 
 /**
  * @packageDocumentation Function to validate access token received from azure active directory. Useful when you're using a msal library to authenticate users on the frontend and you wanna verify Microsoft tokens in the API.
@@ -83,8 +82,6 @@ export default async function validate(
     tenantId,
     applicationId,
   });
-
-  await validateTokenWithGraphApi(accessToken, decodedAccessToken.payload);
 
   return decodedAccessToken;
 }
