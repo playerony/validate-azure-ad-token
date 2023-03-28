@@ -59,6 +59,21 @@ export function validateTokenClaims(
     throw new Error("The token's payload scopes are not a string value");
   }
 
+  // expiration
+  if (!tokenPayload.exp) {
+    throw new Error('The token\'s payload does not contain "exp" property');
+  }
+
+  if (typeof tokenPayload.exp !== 'number') {
+    throw new Error("The token's payload expiration is not a number value");
+  }
+
+  const isValidExpiration = tokenPayload.exp > Math.floor(Date.now() / 1000);
+
+  if (!isValidExpiration) {
+    throw new Error("The token's payload contains different expiration");
+  }
+
   const scopesAsArray = tokenPayload.scp.split(' ');
   const hasValidScopes = scopes.every((_scope) => scopesAsArray.includes(_scope));
 
