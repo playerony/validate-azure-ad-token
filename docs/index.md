@@ -6,6 +6,7 @@
 
 ## Packages
 
-| Package                                                 | Description |
-| ------------------------------------------------------- | ----------- |
-| [validate-azure-ad-token](./validate-azure-ad-token.md) |             |
+|  Package | Description |
+|  --- | --- |
+|  [validate-azure-ad-token](./validate-azure-ad-token.md) |  |
+
