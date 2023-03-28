@@ -9,19 +9,17 @@ Validate azure active directory access token
 **Signature:**
 
 ```typescript
-export default function validate(
-  accessToken: string,
-  { applicationId, audience, scopes, tenantId }: IValidationOptions,
-): Promise<Jwt>;
+export default function validate(accessToken: string, { applicationId, audience, scopes, tenantId }: IValidationOptions): Promise<Jwt>;
 ```
 
 ## Parameters
 
-| Parameter                                     | Type                                                                  | Description                            |
-| --------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------- |
-| accessToken                                   | string                                                                | valid access token received from azure |
-| { applicationId, audience, scopes, tenantId } | [IValidationOptions](./validate-azure-ad-token.ivalidationoptions.md) |                                        |
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  accessToken | string | valid access token received from azure |
+|  { applicationId, audience, scopes, tenantId } | [IValidationOptions](./validate-azure-ad-token.ivalidationoptions.md) |  |
 
 **Returns:**
 
 Promise&lt;Jwt&gt;
+

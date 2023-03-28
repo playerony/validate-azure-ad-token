@@ -6,12 +6,13 @@
 
 ## Functions
 
-| Function                                                                                                      | Description                                  |
-| ------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| [validate(accessToken, { applicationId, audience, scopes, tenantId })](./validate-azure-ad-token.validate.md) | Validate azure active directory access token |
+|  Function | Description |
+|  --- | --- |
+|  [validate(accessToken, { applicationId, audience, scopes, tenantId })](./validate-azure-ad-token.validate.md) | Validate azure active directory access token |
 
 ## Interfaces
 
-| Interface                                                             | Description                                                                 |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| [IValidationOptions](./validate-azure-ad-token.ivalidationoptions.md) | The interface represents required fields to process access token validation |
+|  Interface | Description |
+|  --- | --- |
+|  [IValidationOptions](./validate-azure-ad-token.ivalidationoptions.md) | The interface represents required fields to process access token validation |
+
